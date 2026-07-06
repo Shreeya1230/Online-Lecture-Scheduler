@@ -433,7 +433,7 @@ export default function AdminDashboard() {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {courses.map((course) => {
-                  const imgSrc = course.image ? (course.image.startsWith("http") ? course.image : `http://localhost:5000${course.image}`) : null;
+                  const imgSrc = course.image ? (course.image.startsWith("http") ? course.image : `${process.env.NEXT_PUBLIC_API_BASE}${course.image}`) : null;
                   return (
                     <div key={course._id} className="glass-panel rounded-3xl overflow-hidden shadow-md flex flex-col border border-slate-100 dark:border-slate-800/80 animate-fade-in group hover:shadow-lg transition-all duration-300">
                       

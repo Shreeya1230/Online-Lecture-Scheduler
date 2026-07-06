@@ -231,7 +231,7 @@ const handleChangePassword = async () => {
               <div className="relative border-l border-slate-200 dark:border-slate-800 ml-4 pl-6 space-y-6">
                 {upcomingLectures.map((l) => {
                   const course = l.courseId;
-                  const imgSrc = course?.image ? (course.image.startsWith("http") ? course.image : `http://localhost:5000${course.image}`) : null;
+                  const imgSrc = course?.image ? (course.image.startsWith("http") ? course.image : `${process.env.NEXT_PUBLIC_API_BASE}${course.image}`) : null;
                   return (
                     <div key={l._id} className="relative group">
                       
