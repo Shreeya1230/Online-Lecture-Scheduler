@@ -28,7 +28,9 @@ app.use("/api/instructors", instructorRoutes);
 app.use("/api/courses", courseRoutes);
 app.use("/api/lectures", lectureRoutes);
 app.use("/api/auth", authRoutes);
-
+app.get("/", (req, res) => {
+  res.send("Online Lecture Scheduler Backend is running!");
+});
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
